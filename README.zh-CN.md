@@ -91,6 +91,73 @@ Release 构建会把 Dart AOT 快照放进 `libapp.so`（Android）或 `App.fram
 3. 还原符号名与代码偏移，导入 Ghidra/IDA，或用 Frida 按偏移 Hook。
 4. 需要 TLS 抓包时，优先走替换引擎的路线（`reFlutter`），因为 Flutter 不使用系统证书库，安装证书通常无效。
 
+## 2020 年历史快照
+
+> **历史数据，截止 2020-12-31 23:59:59 UTC。** 本节只记录仍可核实的 2020 年状态，不代表这些项目的现状。当前星标与活跃度见上文 [Android](#android)、[iOS](#ios)、[Flutter / Dart](#flutter--dart) 三张表，其数据采集于 2026-11-13。
+
+### 采集口径
+
+| 字段 | 来源 |
+|---|---|
+| 2020 年是否存在 | `GET /repos/{owner}/{repo}` 的 `created_at` |
+| 2020-12-31 前最后一次提交 | `GET /repos/{owner}/{repo}/commits?until=2020-12-31T23:59:59Z&per_page=1` |
+| 2020-12-31 前最新发布 | `GET /repos/{owner}/{repo}/releases` 中 `created_at` 早于截止时间的最新一条 |
+| 星标 | Wayback Machine 存档的仓库页面，存档日期标注在同一单元格内 |
+
+局限：星标为存档页面当时公布的精确计数，不是估算值，但存档日期不一定正好是 2020-12-31。标为 `未还原` 表示没有找到 2020 年存档，或存档站限流导致无法读取，未做任何推算。2020 年后改名的仓库按当前路径列出，改名前的历史通过 GitHub 重定向读取。`—` 表示截止时间前没有 GitHub Release 记录。
+
+### 2020 年已存在
+
+| 仓库 | 工具 | 最后提交（≤ 2020-12-31） | 最新 Release（≤ 2020） | ★（存档日期） | 2020 年状态 |
+|---|---|---|---|---|---|
+| [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) | Apktool | 2020-12-11 | v2.5.0 / 2020-12-02 | 11,121（2020-12-28） | 当月发布 v2.5.0，已是资源解码与重建的默认工具。 |
+| [skylot/jadx](https://github.com/skylot/jadx) | jadx | 2020-12-31 | v1.2.0 / 2020-11-14 | 24,638（2020-12-28） | 全年活跃，11 月发布 v1.2.0。 |
+| [pxb1988/dex2jar](https://github.com/pxb1988/dex2jar) | dex2jar | 2020-06-24 | 2.1-nightly-28 / 2018-04-02 | 8,217（2020-12-17） | 2020 年仍有维护，但最新产物仍是 2018 年的 nightly。 |
+| [JesusFreke/smali](https://github.com/JesusFreke/smali) | smali / baksmali | 2020-03-25 | — | 4,719（2020-12-17） | 实际上已冻结，主要通过 Apktool 使用。 |
+| [androguard/androguard](https://github.com/androguard/androguard) | Androguard | 2020-11-24 | v3.4.0a1 / 2020-04-16 | 3,302（2020-12-08） | Python 分析库，当时只有 3.4 的预发布版。 |
+| [google/android-classyshark](https://github.com/google/android-classyshark) | ClassyShark | 2020-07-28 | 8.2 / 2018-07-25 | 6,615（2020-12-05） | 开发已放缓；仓库于 2023 年归档。 |
+| [rednaga/APKiD](https://github.com/rednaga/APKiD) | APKiD | 2020-11-20 | v2.1.1 / 2020-11-12 | 未还原 | 11 月发布 v2.1.1；未找到该仓库 2020 年的存档页，星标无法还原。 |
+| [ev-flow/quark-engine](https://github.com/ev-flow/quark-engine) | Quark-Engine | 2020-12-09 | v20.12 / 2020-12-07 | 432（2020-12-19） | 当时位于 `quark-engine/quark-engine`，按月份命名版本（v20.12）。 |
+| [APKLab/APKLab](https://github.com/APKLab/APKLab) | APKLab | 2020-12-27 | — | 未还原 | 仓库创建于 2020-05，当时仍是早期插件，无 GitHub Release。 |
+| [frida/frida](https://github.com/frida/frida) | Frida | 2020-12-30 | 14.2.2 / 2020-12-20 | 6,397（2020-11-08） | 处于 14.x 系列，已覆盖 Android 与 iOS 动态插桩。 |
+| [sensepost/objection](https://github.com/sensepost/objection) | objection | 2020-10-01 | 1.9.6 / 2020-08-13 | 3,160（2020-12-04） | 1.9.6，基于 Frida 的运行时探查。 |
+| [LSPosed/LSPosed](https://github.com/LSPosed/LSPosed) | LSPosed | 2020-12-31 | — | 未还原 | 2020-12-12 才创建，截止前无发布，实际可用从 2021 年开始。 |
+| [ac-pm/Inspeckage](https://github.com/ac-pm/Inspeckage) | Inspeckage | 2018-08-24 | v2.4 / 2018-08-24 | 1,981（2020-12-07） | 2020 年已停滞，最后提交停在 2018 年。 |
+| [Fuzion24/JustTrustMe](https://github.com/Fuzion24/JustTrustMe) | JustTrustMe | 2020-12-08 | v.2 / 2016-01-26 | 2,605（2020-11-12） | Release 停留在 2016 年，2020 年仅有零星提交。 |
+| [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) | MobSF | 2020-12-31 | v3.1.1 / 2020-08-05 | 7,872（2020-12-24） | v3.1.1，当时已同时覆盖 Android 与 iOS。 |
+| [hanbinglengyue/FART](https://github.com/hanbinglengyue/FART) | FART | 2020-07-31 | — | 902（2020-09-21） | ART 脱壳研究方案，无 GitHub Release。 |
+| [mitmproxy/mitmproxy](https://github.com/mitmproxy/mitmproxy) | mitmproxy | 2020-12-30 | v6.0.2 / 2020-12-15 | 20,846（2020-12-06） | v6.0.2。 |
+| [patrickfav/uber-apk-signer](https://github.com/patrickfav/uber-apk-signer) | uber-apk-signer | 2020-11-29 | v1.2.1 / 2020-11-29 | 617（2020-12-28） | v1.2.1。 |
+| [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) | Ghidra | 2020-12-31 | Ghidra_9.2.2_build / 2020-12-29 | 24,092（2020-12-30） | 年末为 9.2.2；2019 年开源。 |
+| [radareorg/radare2](https://github.com/radareorg/radare2) | radare2 | 2020-12-31 | 5.0.0 / 2020-12-21 | 13,677（2020-12-28） | 当年的大版本为 5.0.0。 |
+| [rizinorg/rizin](https://github.com/rizinorg/rizin) | Rizin | 2020-12-30 | — | 453（2020-12-27） | 2020-09 从 radare2 分叉后创建，截止前无 Release。 |
+| [nygard/class-dump](https://github.com/nygard/class-dump) | class-dump | 2019-03-15 | 3.4 / 2012-11-19 | 2,811（2020-11-11） | 2020 年已是遗留工具：自 2019 年无提交，最后发布停在 2012 年。 |
+| [lief-project/LIEF](https://github.com/lief-project/LIEF) | LIEF | 2020-12-31 | 0.10.1 / 2019-11-29 | 未还原 | 2020 年持续提交；存档站限流导致星标无法读取。 |
+| [tpoechtrager/cctools-port](https://github.com/tpoechtrager/cctools-port) | cctools-port | 2020-12-19 | cctools-877.8-ld64-253.9-1 / 2016-06-24 | 438（2020-12-19） | 2020 年仍在更新，Release 标签停留在 2016 年。 |
+| [DerekSelander/LLDB](https://github.com/DerekSelander/LLDB) | LLDB 脚本集 | 2020-07-11 | — | 1,107（2020-11-25） | 脚本集合，无 Release。 |
+| [AloneMonkey/frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump) | frida-ios-dump | 2020-06-01 | — | 1,751（2020-12-02） | 基于 Frida 导出已解密 IPA。 |
+| [KJCracks/Clutch](https://github.com/KJCracks/Clutch) | Clutch | 2019-11-04 | 2.0.4 / 2016-08-23 | 3,032（2020-12-10） | 自 2019 年起停更。 |
+| [stefanesser/dumpdecrypted](https://github.com/stefanesser/dumpdecrypted) | dumpdecrypted | 2014-02-13 | — | 2,494（2020-09-30） | 历史工具，自 2014 年起未变更。 |
+| [BishopFox/bfdecrypt](https://github.com/BishopFox/bfdecrypt) | bfdecrypt | 2018-02-07 | — | 321（2020-11-12） | 仅支持 iOS 11.x，自 2018 年起停更。 |
+| [libimobiledevice/libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) | libimobiledevice | 2020-12-30 | 1.3.0 / 2020-06-15 | 3,673（2020-12-15） | 活跃维护，2020-06 发布 1.3.0。 |
+| [DanTheMan827/ios-app-signer](https://github.com/DanTheMan827/ios-app-signer) | iOS App Signer | 2020-06-22 | 1.13.1 / 2019-12-05 | 3,552（2020-12-04） | 1.13.1。 |
+| [axi0mX/ipwndfu](https://github.com/axi0mX/ipwndfu) | ipwndfu | 2019-10-01 | — | 6,065（2020-12-15） | Bootrom 工具集，自 2019 年起停更。 |
+| [mildsunrise/darter](https://github.com/mildsunrise/darter) | darter | 2020-11-27 | — | 21（2020-11-17） | 2019-11 已创建，此时仍是早期快照解析器。 |
+| [rscloura/Doldrums](https://github.com/rscloura/Doldrums) | Doldrums | 2020-12-16 | — | 未还原 | 2020-11 创建；Beta 解析器，仅支持 Dart 2.10。 |
+| [dart-lang/sdk](https://github.com/dart-lang/sdk) | Dart SDK | 2020-12-31 | — | 6,185（2020-11-30） | 当时快照与 AOT 格式的参考实现。 |
+| [flutter/flutter](https://github.com/flutter/flutter) | Flutter | 2020-12-31 | — | 109,895（2020-12-31） | 用于把 2020 年的 `libflutter.so` 对应回当时的引擎构建。 |
+
+### 2020 年尚不存在
+
+| 仓库 | GitHub 创建时间 | 说明 |
+|---|---|---|
+| [CodingGay/BlackDex](https://github.com/CodingGay/BlackDex) | 2021-05-21 | 2020 年不存在。 |
+| [mvt-project/mvt](https://github.com/mvt-project/mvt) | 2021-07-16 | 2020 年不存在。 |
+| [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) | 2022-04-13 | 当前仓库创建于 2022 年，不属于 2020 年的工具版图。 |
+| [Guardsquare/flutter-re-demo](https://github.com/Guardsquare/flutter-re-demo) | 2022-06-02 | 2020 年不存在。 |
+| [palera1n/palera1n](https://github.com/palera1n/palera1n) | 2022-09-17 | 2020 年不存在。 |
+| [worawit/blutter](https://github.com/worawit/blutter) | 2023-08-22 | 2020 年不存在；当时可用的 Flutter AOT 解析工具是 `darter` 与 `Doldrums`。 |
+
 ## 数据核验
 
 星标与最近推送时间可用 GitHub CLI 复现：
