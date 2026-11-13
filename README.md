@@ -91,6 +91,73 @@ Release builds ship a Dart AOT snapshot inside `libapp.so` (Android) or `App.fra
 3. Recover symbol names and code offsets, then import them into Ghidra/IDA or hook the offsets with Frida.
 4. For TLS inspection, prefer the engine-patching route (`reFlutter`) before attempting certificate installation, because Flutter does not use the platform trust store.
 
+## 2020 historical snapshot
+
+> **Historical data, cut-off 2020-12-31 23:59:59 UTC.** This section records what can still be verified about 2020 and does not describe the projects as they are today. For current stars and activity see [Android](#android), [iOS](#ios) and [Flutter / Dart](#flutter--dart), whose snapshot is 2026-11-13.
+
+### Method
+
+| Field | Source |
+|---|---|
+| Existence in 2020 | `created_at` from `GET /repos/{owner}/{repo}` |
+| Last commit on or before 2020-12-31 | `GET /repos/{owner}/{repo}/commits?until=2020-12-31T23:59:59Z&per_page=1` |
+| Latest release on or before 2020-12-31 | Newest entry in `GET /repos/{owner}/{repo}/releases` with `created_at` before the cut-off |
+| Stars | Archived repository page from the Wayback Machine; the archive date is shown in the same cell |
+
+Limits: star figures are exact counts published on the archived page, not estimates, but the archive date is not always 31 December 2020. `unknown` means no 2020 archive page could be recovered, or the archive rate-limited the request, and no value was inferred. Repositories renamed since 2020 are listed under their current path; history before the rename is read through GitHub redirects. `—` means the project had no GitHub Release before the cut-off.
+
+### Present in 2020
+
+| Repository | Tool | Last commit ≤ 2020-12-31 | Latest release ≤ 2020 | ★ (archive date) | State in 2020 |
+|---|---|---|---|---|---|
+| [iBotPeaches/Apktool](https://github.com/iBotPeaches/Apktool) | Apktool | 2020-12-11 | v2.5.0 / 2020-12-02 | 11,121 (2020-12-28) | v2.5.0 shipped that month; already the default resource decode/rebuild tool. |
+| [skylot/jadx](https://github.com/skylot/jadx) | jadx | 2020-12-31 | v1.2.0 / 2020-11-14 | 24,638 (2020-12-28) | Active throughout the year; v1.2.0 in November. |
+| [pxb1988/dex2jar](https://github.com/pxb1988/dex2jar) | dex2jar | 2020-06-24 | 2.1-nightly-28 / 2018-04-02 | 8,217 (2020-12-17) | Maintained in 2020, but the newest artifact was still a 2018 nightly. |
+| [JesusFreke/smali](https://github.com/JesusFreke/smali) | smali / baksmali | 2020-03-25 | — | 4,719 (2020-12-17) | Effectively frozen; consumed through Apktool. |
+| [androguard/androguard](https://github.com/androguard/androguard) | Androguard | 2020-11-24 | v3.4.0a1 / 2020-04-16 | 3,302 (2020-12-08) | Python analysis library; only a 3.4 pre-release existed. |
+| [google/android-classyshark](https://github.com/google/android-classyshark) | ClassyShark | 2020-07-28 | 8.2 / 2018-07-25 | 6,615 (2020-12-05) | Development had slowed; the repository was archived later, in 2023. |
+| [rednaga/APKiD](https://github.com/rednaga/APKiD) | APKiD | 2020-11-20 | v2.1.1 / 2020-11-12 | unknown | v2.1.1 in November; no 2020 archive page of the repository was recoverable for stars. |
+| [ev-flow/quark-engine](https://github.com/ev-flow/quark-engine) | Quark-Engine | 2020-12-09 | v20.12 / 2020-12-07 | 432 (2020-12-19) | Hosted at `quark-engine/quark-engine` at the time and versioned by month (v20.12). |
+| [APKLab/APKLab](https://github.com/APKLab/APKLab) | APKLab | 2020-12-27 | — | unknown | Repository created 2020-05; still an early-stage extension with no GitHub Release. |
+| [frida/frida](https://github.com/frida/frida) | Frida | 2020-12-30 | 14.2.2 / 2020-12-20 | 6,397 (2020-11-08) | 14.x line with Android and iOS instrumentation. |
+| [sensepost/objection](https://github.com/sensepost/objection) | objection | 2020-10-01 | 1.9.6 / 2020-08-13 | 3,160 (2020-12-04) | 1.9.6; Frida-based runtime exploration. |
+| [LSPosed/LSPosed](https://github.com/LSPosed/LSPosed) | LSPosed | 2020-12-31 | — | unknown | Created 2020-12-12 only; no release before the cut-off, so practical use begins in 2021. |
+| [ac-pm/Inspeckage](https://github.com/ac-pm/Inspeckage) | Inspeckage | 2018-08-24 | v2.4 / 2018-08-24 | 1,981 (2020-12-07) | Already dormant in 2020; no commits since 2018. |
+| [Fuzion24/JustTrustMe](https://github.com/Fuzion24/JustTrustMe) | JustTrustMe | 2020-12-08 | v.2 / 2016-01-26 | 2,605 (2020-11-12) | Release frozen at 2016; only minor commits in 2020. |
+| [MobSF/Mobile-Security-Framework-MobSF](https://github.com/MobSF/Mobile-Security-Framework-MobSF) | MobSF | 2020-12-31 | v3.1.1 / 2020-08-05 | 7,872 (2020-12-24) | v3.1.1; already covered both Android and iOS. |
+| [hanbinglengyue/FART](https://github.com/hanbinglengyue/FART) | FART | 2020-07-31 | — | 902 (2020-09-21) | ART unpacking research; no GitHub Release. |
+| [mitmproxy/mitmproxy](https://github.com/mitmproxy/mitmproxy) | mitmproxy | 2020-12-30 | v6.0.2 / 2020-12-15 | 20,846 (2020-12-06) | v6.0.2. |
+| [patrickfav/uber-apk-signer](https://github.com/patrickfav/uber-apk-signer) | uber-apk-signer | 2020-11-29 | v1.2.1 / 2020-11-29 | 617 (2020-12-28) | v1.2.1. |
+| [NationalSecurityAgency/ghidra](https://github.com/NationalSecurityAgency/ghidra) | Ghidra | 2020-12-31 | Ghidra_9.2.2_build / 2020-12-29 | 24,092 (2020-12-30) | 9.2.2 at year end; open source since 2019. |
+| [radareorg/radare2](https://github.com/radareorg/radare2) | radare2 | 2020-12-31 | 5.0.0 / 2020-12-21 | 13,677 (2020-12-28) | 5.0.0 was the major release of the year. |
+| [rizinorg/rizin](https://github.com/rizinorg/rizin) | Rizin | 2020-12-30 | — | 453 (2020-12-27) | Created 2020-09 after the radare2 fork; no release before the cut-off. |
+| [nygard/class-dump](https://github.com/nygard/class-dump) | class-dump | 2019-03-15 | 3.4 / 2012-11-19 | 2,811 (2020-11-11) | Legacy already: no commits since 2019, last release from 2012. |
+| [lief-project/LIEF](https://github.com/lief-project/LIEF) | LIEF | 2020-12-31 | 0.10.1 / 2019-11-29 | unknown | Actively committed in 2020; star count not recovered because the archive rate-limited the page request. |
+| [tpoechtrager/cctools-port](https://github.com/tpoechtrager/cctools-port) | cctools-port | 2020-12-19 | cctools-877.8-ld64-253.9-1 / 2016-06-24 | 438 (2020-12-19) | Still updated in 2020; release tag dates from 2016. |
+| [DerekSelander/LLDB](https://github.com/DerekSelander/LLDB) | LLDB scripts | 2020-07-11 | — | 1,107 (2020-11-25) | Script collection; no releases. |
+| [AloneMonkey/frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump) | frida-ios-dump | 2020-06-01 | — | 1,751 (2020-12-02) | Frida-based decrypted IPA extraction. |
+| [KJCracks/Clutch](https://github.com/KJCracks/Clutch) | Clutch | 2019-11-04 | 2.0.4 / 2016-08-23 | 3,032 (2020-12-10) | Dormant since 2019. |
+| [stefanesser/dumpdecrypted](https://github.com/stefanesser/dumpdecrypted) | dumpdecrypted | 2014-02-13 | — | 2,494 (2020-09-30) | Historical dumper, unchanged since 2014. |
+| [BishopFox/bfdecrypt](https://github.com/BishopFox/bfdecrypt) | bfdecrypt | 2018-02-07 | — | 321 (2020-11-12) | iOS 11.x only; dormant since 2018. |
+| [libimobiledevice/libimobiledevice](https://github.com/libimobiledevice/libimobiledevice) | libimobiledevice | 2020-12-30 | 1.3.0 / 2020-06-15 | 3,673 (2020-12-15) | Active; 1.3.0 shipped in June 2020. |
+| [DanTheMan827/ios-app-signer](https://github.com/DanTheMan827/ios-app-signer) | iOS App Signer | 2020-06-22 | 1.13.1 / 2019-12-05 | 3,552 (2020-12-04) | 1.13.1. |
+| [axi0mX/ipwndfu](https://github.com/axi0mX/ipwndfu) | ipwndfu | 2019-10-01 | — | 6,065 (2020-12-15) | Bootrom toolkit; dormant since 2019. |
+| [mildsunrise/darter](https://github.com/mildsunrise/darter) | darter | 2020-11-27 | — | 21 (2020-11-17) | Existed since 2019-11; an early snapshot parser at this point. |
+| [rscloura/Doldrums](https://github.com/rscloura/Doldrums) | Doldrums | 2020-12-16 | — | unknown | Created 2020-11; beta parser limited to Dart 2.10. |
+| [dart-lang/sdk](https://github.com/dart-lang/sdk) | Dart SDK | 2020-12-31 | — | 6,185 (2020-11-30) | Reference for the snapshot and AOT formats of that period. |
+| [flutter/flutter](https://github.com/flutter/flutter) | Flutter | 2020-12-31 | — | 109,895 (2020-12-31) | Used to map a 2020 `libflutter.so` back to the engine build of the time. |
+
+### Not present in 2020
+
+| Repository | Created on GitHub | Note |
+|---|---|---|
+| [CodingGay/BlackDex](https://github.com/CodingGay/BlackDex) | 2021-05-21 | Did not exist in 2020. |
+| [mvt-project/mvt](https://github.com/mvt-project/mvt) | 2021-07-16 | Did not exist in 2020. |
+| [Impact-I/reFlutter](https://github.com/Impact-I/reFlutter) | 2022-04-13 | Current repository created in 2022; the project is not part of the 2020 landscape. |
+| [Guardsquare/flutter-re-demo](https://github.com/Guardsquare/flutter-re-demo) | 2022-06-02 | Did not exist in 2020. |
+| [palera1n/palera1n](https://github.com/palera1n/palera1n) | 2022-09-17 | Did not exist in 2020. |
+| [worawit/blutter](https://github.com/worawit/blutter) | 2023-08-22 | Did not exist in 2020; Flutter AOT parsing tools of that era were `darter` and `Doldrums`. |
+
 ## Verification
 
 The star and last-push figures can be reproduced with the GitHub CLI:
